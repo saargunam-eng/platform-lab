@@ -48,5 +48,3 @@ python list-k8s-pods.py --kubeconfig /path/to/kubeconfig
 - On macOS, if `pip install` fails due to an externally-managed environment, prefer creating a venv as shown above.
 
 ---
-
-If you'd like, I can add a short `CONTRIBUTING.md` or a couple of inline comments explaining each function for learning. Which would you prefer next?
