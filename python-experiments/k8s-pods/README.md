@@ -24,21 +24,25 @@ python -m pip install kubernetes    # or: pipx install kubernetes
 ```
 
 ## Usage 💡
-Run the script from the project directory (inside the venv if you used one):
+Run the script from the project directory (inside the venv if you used one).
+
+You can use `make` from the repository root for convenience:
 
 ```bash
-# default namespace (or whatever is configured as default)
-python list-k8s-pods.py
+# create venv and install deps (first time)
+make install
 
-# list pods across all namespaces
-python list-k8s-pods.py -A
+# run the script (pass extra args with ARGS="--raw")
+make run
 
-# print raw JSON output
-python list-k8s-pods.py --raw
+# run across all namespaces
+make run-all
 
-# use specific kubeconfig
-python list-k8s-pods.py --kubeconfig /path/to/kubeconfig
+# or run directly with the venv python
+.venv/bin/python k8s-pods/list-k8s-pods.py -A
 ```
+
+If you don't have make, use the direct python commands shown previously.
 
 ## What it prints
 - A simple table with columns: namespace, pod name, ready containers, status, restart count, and node IP/name.
